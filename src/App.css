@@ -1,0 +1,287 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+
+/* app specific */
+:root {
+  --yellow: #ffd300;
+  --tangerine: #ff9200;
+  --cloudyBlue: #cad7dd;
+  --blueGreen: #49c8a8;
+  --lighterBlueGreen: #21e892;
+  --paleGrey: #f5f8f9;
+  --lessPaleGrey: #e5e7e9;
+  --charcoalGrey: #373d40;
+}
+
+#root {
+  width: 100%;
+  font-family: sans-serif;
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+}
+
+.leftClass {
+  background-color: var(--yellow);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-inline: 10%;
+  z-index: 3;
+}
+
+.leftClass h2 {
+  font-size: 6ch;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.leftClass h4 {
+  font-size: 4ch;
+  text-align: center;
+}
+
+.bolded {
+  font-weight: bold;
+}
+
+.arrowContainer {
+  width: 70px;
+  height: 70px;
+  background-color: var(--charcoalGrey);
+  border-radius: 50%;
+}
+
+.arrowContainer img {
+  position: relative;
+  top: 17px;
+  left: 28px;
+  transition: 1s;
+}
+
+.faceLeft {
+  transform: rotate(180deg);
+  left: 20px !important;
+  transition: 1s;
+}
+
+.rightClass {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.rightClass h2 {
+  font-size: 5ch;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.rightClass p {
+  line-height: 3ch;
+}
+
+.rightClass form {
+  position: absolute;
+  width: 48%;
+  padding: 0 6%;
+}
+
+.hideForm {
+  transition: 2s;
+  display: none;
+}
+
+.slidePageIn {
+  position: absolute;
+  width: 48%;
+  padding: 0 6%;
+  padding-top: 8vh;
+  height: 92vh;
+  top: 0;
+  left: 40%;
+  z-index: 2;
+  background-color: var(--tangerine);
+  transition: 1s;
+  animation: slideRight 2s;
+}
+
+.slidePageOut {
+  position: absolute;
+  width: 60%;
+  padding-top: 8vh;
+  height: 92vh;
+  top: 0;
+  left: -20%;
+  transition: 2s;
+  z-index: 2;
+  background-color: var(--tangerine);
+  animation: slideLeft 2s;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.buttonRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 980px) {
+  #root {
+    width: 100%;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rightClass {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .rightClass form {
+    position: absolute;
+    width: 76%;
+    padding: 0 6%;
+  }
+
+  .arrowContainer img {
+    position: relative;
+    top: 24px;
+    left: 24px;
+    transition: 1s;
+    transform: rotate(90deg);
+  }
+
+  .faceLeft {
+    transform: rotate(-90deg) !important;
+    top: 12px !important;
+    left: 24px !important;
+    transition: 1s !important;
+  }
+
+  .slidePageIn {
+    position: relative;
+    width: calc(100% - 12%);
+    padding-inline: 6%;
+    padding-top: 8vh;
+    height: 92vh;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: var(--tangerine);
+    transition: 1s;
+    animation: slideDown 2s;
+  }
+  
+  .slidePageOut {
+    position: relative;
+    width: calc(100% - 12%);
+    padding-inline: 6%;
+    padding-top: 8vh;
+    height: 92vh;
+    top: -100%;
+    left: 0;
+    transition: 2s;
+    z-index: 2;
+    background-color: var(--tangerine);
+    animation: slideUp 2s;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .rightClass {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .rightClass form {
+    position: absolute;
+    width: 88%;
+    top: 100%;
+    padding: 46px 6%;
+  }
+
+  .buttonRow {
+    display: flex;
+    flex-direction: column;
+  }
+}

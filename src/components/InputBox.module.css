@@ -1,0 +1,135 @@
+.rowStyle {
+  display: grid;
+  grid-template-columns: 2fr 16fr 46fr;
+};
+
+.labelStyle {
+  display: inline-block;
+};
+
+.errorMarker {
+  background-color: #ff9200;
+  width: 10px;
+  height: 10px;
+}
+
+.labelContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.inputDiv input {
+  width: calc(100% - 42px);
+  height: 56px;
+  position: relative;
+  padding: 0px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: var(--paleGrey);
+  margin: 12px 0;
+  outline: none;
+  transition: 0.3s;
+  padding-left: 26px;
+}
+
+.inputDivError input {
+  width: calc(100% - 42px);
+  height: 56px;
+  position: relative;
+  padding: 0px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: var(--paleGrey);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--tangerine);
+  margin: 12px 0;
+  outline: none;
+  transition: 0.3s;
+  padding-left: 26px;
+}
+
+.inputDiv input:focus {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--cloudyBlue);
+  background-color: #fff;
+}
+
+.errorMessage {
+  font-size: 11px;
+  color: #ff9200;
+  position: relative;
+  float: right;
+  right: 0;
+  bottom: 15px;
+}
+
+.calendarDiv {
+  position: absolute;
+  right: 0;
+  bottom: -250px;
+  z-index: 1;
+}
+
+.hideCal {
+  display: none;
+}
+
+.radioOptions {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.radioItem {
+  flex: 1;
+  min-width: 140px;
+  flex-direction: column; 
+  align-items: center;
+  vertical-align: middle;
+  margin-top: 12px;
+}
+
+.iconDiv {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 13px;
+  text-align: center;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--paleGrey);
+}
+
+.iconDiv img {
+  position:relative;
+  top: calc(50% - 10px);
+}
+
+.iconDivActive {
+  background-color: var(--cloudyBlue) !important;
+}
+
+.radioText {
+  position: relative;
+  left: 70px;
+  top: -36px;
+  color: var(--charcoalGrey);
+  font-size: 14px;
+}
+
+@media screen and (max-width: 480px) {
+  .rowStyle {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 12px;
+  };
+
+  .inputDiv input {
+    padding: 0 22px;
+  }
+}
